@@ -1,3 +1,11 @@
+- name: 安装用于管理apt源工具
+  become: yes
+  become_method: sudo
+  apt: name={{item}} state=present
+  with_items:
+      - python-apt
+      - python-pycurl
+  when: ansible_distribution == 'Ubuntu'
 - name: 安装haproxy
   include_tasks: haproxy.yml
 

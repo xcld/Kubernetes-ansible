@@ -7,7 +7,12 @@
   when: ( ansible_distribution == "CentOS" or ansible_distribution == "RedHat" ) and pkg.results | selectattr("yumstate", "match", "installed") | list | length == 0
 
 - name: 安装haproxy
-  package: name=haproxy  state=latest
+  apt:
+    name: "{{ packages }}"
+    state: latest
+    vars:
+      packages:
+        - haproxy
   when: ansible_distribution == "Ubuntu"
 
 - name: 配置haproxy
