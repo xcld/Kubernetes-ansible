@@ -42,6 +42,13 @@
   tags:
     - etcd
 
+- hosts: network
+  gather_facts: yes
+  roles:
+    - HA
+  tags:
+    - HA
+
 - hosts: master
   gather_facts: yes
   roles:
