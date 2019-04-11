@@ -9,11 +9,8 @@
 
 - name: 安装keepavlied
   apt:
-    name: "{{ packages }}"
+    name:  keepalived
     state: latest
-    vars:
-      packages:
-        - keepalived
   when: ansible_distribution == "Ubuntu"
 
 - name: 配置keepalived

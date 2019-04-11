@@ -9,11 +9,8 @@
 
 - name: 安装haproxy
   apt:
-    name: "{{ packages }}"
+    name:  haproxy
     state: latest
-    vars:
-      packages:
-        - haproxy
   when: ansible_distribution == "Ubuntu"
 
 - name: 配置haproxy
