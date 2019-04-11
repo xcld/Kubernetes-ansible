@@ -41,7 +41,7 @@
     - etcd
   tags:
     - etcd
-
+#deploy ha+keepalived to network hosts
 - hosts: network
   gather_facts: yes
   roles:
